@@ -5,8 +5,12 @@ import (
 )
 
 func main() {
-	fmt.Println(buildChain([]string{"f",
-		"fo", "fooo", "foo", "bar", "baz", "soor", "zoom", "zoot"}, 2))
-	// fmt.Println(buildChain(MaleIshNames, 2))
+	CHAINLEN := 2
+	ch := buildChain(MaleIshNames, CHAINLEN)
+	for i := 0; i < 10; i++ {
+		fmt.Print(generateName(ch, CHAINLEN))
+		fmt.Print(" ")
+	}
+	fmt.Println()
 	fmt.Println("OK")
 }

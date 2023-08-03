@@ -3,26 +3,25 @@ package main
 import "testing"
 
 func TestChain(t *testing.T) {
-	Ss := func(a ...string) []string { return a }
+	input := func(a ...string) []string { return a }
+	strings := input // input is a slice of strings, output keys are as well
+	yields := func(ss ...any) MarkovChain {
+		m := make(map[string][]string)
+		for i := 0; i < len(ss)-1; i += 2 {
+			key := ss[i].(string)
+			val := ss[i+1].([]string)
+			m[key] = val
+		}
+		return MarkovChain{m: m}
+	}
 	testCases := []struct {
 		words  []string
 		output MarkovChain
 	}{
-		{Ss("aa"), MarkovChain{
-			"aa": Ss(EOW),
-		}},
-		{Ss("aaa", "aab"), MarkovChain{
-			"aa": Ss("a", "b", EOW),
-			"ab": Ss(EOW),
-		}},
-		{Ss("aaa", "aa"), MarkovChain{
-			"aa": Ss("a", EOW, EOW),
-		}},
-		{Ss("aaa", "aab", "aac"), MarkovChain{
-			"aa": Ss("a", "b", "c", EOW),
-			"ab": Ss(EOW),
-			"ac": Ss(EOW),
-		}},
+		{input("aa"), yields("aa", strings(EOW))},
+		{input("aaa", "aab"), yields("aa", strings("a", "b", EOW), "ab", strings(EOW))},
+		{input("aaa", "aa"), yields("aa", strings("a", EOW, EOW))},
+		{input("aaa", "aab", "aac"), yields("aa", strings("a", "b", "c", EOW), "ab", strings(EOW), "ac", strings(EOW))},
 	}
 	for _, tc := range testCases {
 		chain := buildChain(tc.words, 2)
@@ -31,44 +30,3 @@ func TestChain(t *testing.T) {
 		}
 	}
 }
-
-// func TestChain(t *testing.T) {
-// 	Ss := func(a ...string) []string { return a }
-// 	testCases := []struct {
-// 		words  []string
-// 		output map[string][]string
-// 	}{
-// 		{Ss("aa"), map[string][]string{
-// 			"aa": Ss(EOW),
-// 		}},
-// 		{Ss("aaa", "aab"), map[string][]string{
-// 			"aa": Ss("a", "b", EOW),
-// 			"ab": Ss(EOW),
-// 		}},
-// 		// {[]string{"aaa", "aa"}, map[string][]string{
-// 		// 	"aa": []string{"a", EOW},
-// 		// }},
-// 	}
-// 	for _, tc := range testCases {
-// 		chain := buildChain(tc.words, 2)
-// 		if chain != tc.output {
-// 			t.Errorf("Expected %q, got %q", tc.output, chain)
-// 		}
-// 		// if len(chain) != len(tc.output) {
-// 		// 	t.Error("Expected", len(tc.output), "chains, got", len(chain))
-// 		// }
-// 		for k, v := range chain {
-
-// 			// if len(v) != len(tc.output[k]) {
-// 			// 	t.Errorf("Expected %d values for %s, got %d: %q", len(tc.output[k]), k, len(v), v)
-
-// 			// 	continue
-// 			// }
-// 			// for i, c := range v {
-// 			// 	if c != tc.output[k][i] {
-// 			// 		t.Errorf("Expected '%s' for %s[%d], got '%s'", tc.output[k][i], k, i, c)
-// 			// 	}
-// 			// }
-// 		}
-// 	}
-// }

@@ -5,7 +5,8 @@
 ![build](https://github.com/eigenhombre/namegon/actions/workflows/build.yml/badge.svg)
 
 Another random name generator, loosely based on
-[`namejen`](https://github.com/eigenhombre/namejen).
+[`namejen`](https://github.com/eigenhombre/namejen), but approximately
+900x faster.
 
 # Usage
 

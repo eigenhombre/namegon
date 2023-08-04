@@ -1,4 +1,4 @@
-package main
+package namegon
 
 var MaleIshNames = []string{
 	"aaron", "abdul", "abe", "abel", "abraham", "abram", "adalberto", "adam",

@@ -1,4 +1,4 @@
-package main
+package namegon
 
 var FemaleIshNames = []string{
 	"aaron", "abbey", "abbie", "abby", "abigail", "ada", "adah", "adaline",

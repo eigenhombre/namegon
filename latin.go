@@ -1,4 +1,4 @@
-package main
+package namegon
 
 // Adapted from
 // https://www.math.ubc.ca/~cass/frivs/latin/latin-dict-full.html

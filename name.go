@@ -27,3 +27,10 @@ func generateName(chain MarkovChain, n int) string {
 	}
 	return cases.Title(language.AmericanEnglish).String(name)
 }
+
+func Namer(names []string, n int) func() string {
+	ch := buildChain(names, n)
+	return func() string {
+		return generateName(ch, n)
+	}
+}

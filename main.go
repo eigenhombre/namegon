@@ -5,12 +5,11 @@ import (
 )
 
 func main() {
-	CHAINLEN := 2
-	ch := buildChain(MaleIshNames, CHAINLEN)
+	mkman := Namer(MaleIshNames, 4)
 	for i := 0; i < 10; i++ {
-		fmt.Print(generateName(ch, CHAINLEN))
+		fmt.Print(mkman())
 		fmt.Print(" ")
 	}
 	fmt.Println()
-	fmt.Println("OK")
+	fmt.Println("Done.")
 }

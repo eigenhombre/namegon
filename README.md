@@ -7,7 +7,43 @@ Another random name generator, loosely based on
 
 # Example Usage
 
-    `go get github.com/eigenhombre/namegon`
+    go get github.com/eigenhombre/namegon@<version>
+
+E.g.,
+
+    go get github.com/eigenhombre/namegon@v0.0.1
+
+Then,
+
+    package main
+
+    import (
+        "fmt"
+
+        "github.com/eigenhombre/namegon"
+    )
+
+    func main() {
+        namer := namegon.Namer(namegon.LatinishNames, 4)
+        for i := 0; i < 10; i++ {
+            fmt.Println(namer())
+        }
+        fmt.Println("OK")
+    }
+
+Output:
+
+    Ntamino
+    Uredo
+    Lorum
+    Xusamplitus
+    Apilludo
+    Aepromptus
+    Riuria
+    Asportunitio
+    Dminis
+    Erebro
+    OK
 
 # License: MIT
 

@@ -1,5 +1,7 @@
 # namegon
 
+<img src="namegon.jpg" width="400">
+
 ![build](https://github.com/eigenhombre/namegon/actions/workflows/build.yml/badge.svg)
 
 Another random name generator, loosely based on

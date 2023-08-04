@@ -8,5 +8,6 @@ COPY go.mod .
 COPY go.sum .
 RUN go mod download
 COPY . .
+COPY cmd cmd
 
 RUN make test namegon

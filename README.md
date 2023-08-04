@@ -3,9 +3,9 @@
 ![build](https://github.com/eigenhombre/namegon/actions/workflows/build.yml/badge.svg)
 
 Another random name generator, loosely based on
-`[namejen](https://github.com/eigenhombre/namejen)`.
+[`namejen`](https://github.com/eigenhombre/namejen).
 
-# Example Usage
+# Usage
 
     go get github.com/eigenhombre/namegon@<version>
 
@@ -13,7 +13,11 @@ E.g.,
 
     go get github.com/eigenhombre/namegon@v0.0.1
 
-Then,
+The function `Namer` takes a slice of strings and a "chain length"
+*n*, and returns a function which can be called repeatedly to generate
+names based on *n*-grams from the supplied input.
+
+# Example
 
     package main
 
@@ -44,6 +48,16 @@ Output:
     Dminis
     Erebro
     OK
+
+# Name Seed Lists
+
+The package comes with three "seed lists" ported over from [`namejen`](https://github.com/eigenhombre/namejen):
+
+- `ExampleMaleNames`
+- `ExampleFemaleNames`
+- `LatinWords`
+
+... but of course, your own [corpora](https://github.com/dariusk/corpora) can be used.
 
 # License: MIT
 

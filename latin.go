@@ -2,7 +2,7 @@ package namegon
 
 // Adapted from
 // https://www.math.ubc.ca/~cass/frivs/latin/latin-dict-full.html
-var LatinishNames = []string{
+var LatinWords = []string{
 	"abbas", "abbatia", "abbatis", "abduco", "abeo", "abscido", "absconditus",
 	"absens", "absentis", "absorbeo", "absque", "abstergo", "absum",
 	"abundans", "abundantia", "abutor", "ac", "accedo", "accendo", "acceptus",

@@ -1,9 +1,9 @@
 .PHONY: all install
 
-all: namegon
+all: test
 
 # Update namegon if any go file in any subdirectory changes:
-namegon: $(shell find . -type f -name '*.go')
+namegon: *.go cmd/namegon/*.go
 	go build -o namegon cmd/namegon/main.go
 
 clean:

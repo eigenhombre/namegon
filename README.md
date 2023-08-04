@@ -5,7 +5,7 @@
 Another random name generator, loosely based on
 `[namejen](https://github.com/eigenhombre/namejen)`.
 
-# Usage
+# Example Usage
 
     `go get github.com/eigenhombre/namegon`
 

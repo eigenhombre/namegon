@@ -2,7 +2,6 @@ FROM golang:1.19
 
 RUN apt-get install -y make
 
-ENV GOPATH /go
 WORKDIR /work
 
 COPY go.mod .

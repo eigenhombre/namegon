@@ -2,6 +2,13 @@
 
 ![build](https://github.com/eigenhombre/namegon/actions/workflows/build.yml/badge.svg)
 
+Another random name generator, loosely based on
+`[namejen](https://github.com/eigenhombre/namejen)`.
+
+# Usage
+
+    `go get github.com/eigenhombre/namegon`
+
 # License: MIT
 
 Copyright (c) 2023 John Jacobsen

@@ -1,6 +1,6 @@
 package namegon
 
-var FemaleIshNames = []string{
+var ExampleFemaleNames = []string{
 	"aaron", "abbey", "abbie", "abby", "abigail", "ada", "adah", "adaline",
 	"adam", "addie", "adela", "adelaida", "adelaide", "adele", "adelia",
 	"adelina", "adeline", "adell", "adella", "adelle", "adena", "adina",

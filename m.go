@@ -1,6 +1,6 @@
 package namegon
 
-var MaleIshNames = []string{
+var ExampleMaleNames = []string{
 	"aaron", "abdul", "abe", "abel", "abraham", "abram", "adalberto", "adam",
 	"adan", "adolfo", "adolph", "adrian", "agustin", "ahmad", "ahmed", "al",
 	"alan", "albert", "alberto", "alden", "aldo", "alec", "alejandro", "alex",

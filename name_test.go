@@ -7,7 +7,7 @@ import (
 )
 
 func TestNameSmokeTest(t *testing.T) {
-	result := namegon.Namer(namegon.MaleIshNames, 5)()
+	result := namegon.Namer(namegon.ExampleMaleNames, 5)()
 	if len(result) < 5 {
 		t.Errorf("Expected name to be at least 5 characters, got %s", result)
 	}
